@@ -1,8 +1,22 @@
-package Challenges;
+package Level_Genin.Challenges;
+
 
 public class challenge1 {
     public static void main(String[] args) {
 
+
+        /*
+        * Objective: Create three ninjas, with ages, names, missions, and Missions rank.
+        * Objective+ :
+        *
+        * */
+
+
+
+
+
+
+//  -------------------------------------------------------------------------------------------
 
 //      Naruto
         String narutoName = "Naruto";
@@ -25,6 +39,7 @@ public class challenge1 {
         String sakuraMission = "Kill Naruto, to marry with Sasuke";
         char sakuraRank = 'S';
         boolean sakuraDidIt;
+
 //  ------------------------------------------------------------------------------------------
         // Ninjas age > 20 can do every rank missions
 
@@ -66,21 +81,9 @@ public class challenge1 {
             sakuraDidIt = true;
         };
 
-
-
-
-
-
-
-
-
-
-
-
-
 //  ------------------------------------------------------------------------------------------
 
-//      Imprimindo os ninjas na tela
+//      Show the ninjas on screen
         System.out.println("Here is the team 7:");
         System.out.println(" ");
 

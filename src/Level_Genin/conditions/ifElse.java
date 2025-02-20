@@ -1,11 +1,11 @@
-package conditions;
+package Level_Genin.conditions;
 
 public class ifElse {
     public static void main(String[] args) {
 
         /*
         *
-        * Objective: Level up ninja, acording missionNumber
+        * Objective: Level up ninja, according missionNumber
         * */
 
 
@@ -19,8 +19,11 @@ public class ifElse {
         if (missionNumber > 10) {
             System.out.println("Naruto is Ready to level up");
         }
+        else if (missionNumber > 5){
+            System.out.println("Naruto can be a trainee");
+        }
         else {
-            System.out.println("Naruto isn't ready");
+            System.out.println("Naruto have to practice");
         }
 
 

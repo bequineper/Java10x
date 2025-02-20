@@ -1,4 +1,4 @@
-package TiposDeDados;
+package Level_Genin.TiposDeDados;
 
 public class DadosPrimitivos {
     public static void main(String[] args) {

@@ -1,0 +1,6 @@
+Final Class --> A non extended class(this not means what everything in the class it's gonna be Final)
+Abstract class -->(this not means what everything in the class it's gonna be abstract)
+Abstract method --> A non instantiable method, what all subclasses have to gonna instantiate
+final method --> A non override method
+
+

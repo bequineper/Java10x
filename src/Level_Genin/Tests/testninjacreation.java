@@ -55,20 +55,7 @@ public class testninjacreation {
 
             while (true) {
 
-                char evolve = ninja.next().charAt(0);
 
-                if (evolve == 'y' || evolve == 'Y') {
-                    System.out.println(ninjaName + " has evolved to Hokage! Believe it!");
-                    break;
-
-                } else if (evolve == 'n' || evolve == 'N') {
-                    System.out.println(ninjaName + " will remain at their current rank. Keep working hard!");
-                    break;
-
-                } else {
-                    System.out.println("I didn't understand your answer, can you repeat?");
-
-                }
             }
 
         }

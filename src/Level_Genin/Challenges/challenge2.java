@@ -1,151 +1,86 @@
 package Level_Genin.Challenges;
 
-import Level_Genin.TiposDeDados.Array;
-
+import java.util.Queue;
 import java.util.Scanner;
 
 public class challenge2 {
     public static void main(String[] args) {
 
-       /*
-        // System objective: Register how many ninjas the user wants.
-        // By: Bernardo Quineper 20/02/2025
-        // Version 1.0
-        // Commit: ESSA BOSTA RODOU DE PRIMEIRA KKKKKKKKKKK VSF ACHEI QUE IA QUEBRAR, E NO FIM DEU CERTINHO PERFEITO
-        // COMO EU IMAGINEI
-       */
 
-        System.out.println("Welcome to the ninja creator, the official Konoha \n" +
-                "software to register ninjas!");
-        System.out.println("----------------------------------------------------------");
-        Scanner ninjainput = new Scanner(System.in) ;
+        Scanner Input = new Scanner(System.in);
 
-        boolean stop = false;
-        boolean stop2 = false;
-        boolean stop3 = false;
-        boolean stop4 = false;
-        boolean stop5 = false;
-        boolean stop6 = false;
-        boolean stop7 = false;
+        int Opcao;
+
+        int quantidade = 0;
+
+        int Cadastros = 0;
+
+        // Painel do serviço
+        System.out.println("Qual serviço deseja?");
+        System.out.println("[01] Cadastrar Ninja");
+        System.out.println("[02] Ver Ninjas cadastrados");
+        System.out.println("[03] Encerrar programa");
+
+        int Painel = Input.nextInt();
+        Opcao = Painel;
+
+        if (Opcao == 1) {  // Condição para somente perguntar a quantidade se a opção for igual a 1
+            System.out.print("Quantos ninjas quer cadastrar? ");
+            quantidade = Input.nextInt();
+        }
+
+        String[] Nomes = new String[quantidade];
+        int[] Idades = new int[quantidade];
+
+        while (Opcao != 3) { // Loop para que o painel sempre apareça no final de cada ação
 
 
-        while (!stop) {
+            switch (Opcao) {
+                case 1:  // Caso 1 para cadastrar os ninjas
+                    if (Cadastros == 0) {
+                        while (Cadastros != quantidade) {
+                            System.out.println("___________________");
 
-            System.out.println("Do you wanna create ninjas? (Y/N)");
-            while (!stop2) {
-                char createninjas = ninjainput.next().charAt(0);
-//                --------------------------------------------------------------------------------------------------
-//              OPTION 1: YES
-                if (createninjas == 'y' || createninjas == 'Y') {
+                            System.out.print("Nome Do Ninja: ");
+                            Nomes[Cadastros] = Input.next();
 
-                    System.out.println("How many ninjas you wanna create? (Only numbers)");
-                    int numberninjas = ninjainput.nextInt();
+                            System.out.print("Idade Do Ninja " + Nomes[Cadastros] + ": ");
+                            Idades[Cadastros] = Input.nextInt();
 
-                    if (numberninjas > 0) {
-                        String[] ninjasnames = new String[numberninjas];
-
-                        for (int i = 0; i < numberninjas; i++) {
-                            System.out.println("Write the Ninja-" + i + " name: ");
-                            ninjasnames[i] = ninjainput.next();
-                            System.out.println(" ");
+                            System.out.println("Ninja " + Nomes[Cadastros] + " Cadastrado com sucesso :)");
+                            System.out.println("___________________");
+                            Cadastros++;
                         }
-
-                        System.out.println("Congratulations! You registered all " + numberninjas + " ninjas! \n" +
-                                "Do you want to list them? (y/n)");
-
-                        while (!stop4) {
-                            char listninjas = ninjainput.next().charAt(0);
-                            if (listninjas == 'y' || listninjas == 'Y') {
-                                System.out.println("Great! Let's do this!");
-                                System.out.println("------------------------------------------------------------------------");
-                                for (int i = 0; i < numberninjas; i++) {
-                                    System.out.println("Ninja " + i + ": " + ninjasnames[i]);
-                                }
-                                System.out.println("------------------------------------------------------------------------");
-                                System.out.println("Here's all your ninjas! Do wanna start at begin again?(y/n)");
-                                while (!stop6) {
-                                    char restart = ninjainput.next().charAt(0);
-                                    if (restart == 'y' || restart == 'Y') {
-                                        System.out.println("Welcome to the ninja creator, the official Konoha \n" +
-                                                "software to register ninjas!");
-                                        System.out.println("----------------------------------------------------------");
-                                        break;
-                                    } else if (restart == 'n' || restart == 'N') {
-                                        while (!stop7) {
-                                            System.out.println("Do you wanna close the software? (Y/N)");
-                                            char close = ninjainput.next().charAt(0);
-                                            if (close == 'y' || close == 'Y') {
-                                                System.out.println("Sistem Closing...");
-                                                stop = true;
-                                                break;
-                                            } else if (close == 'n' || close == 'N') {
-                                                System.out.println("So, do you restart at the begin?");
-                                                break;
-                                            } else {
-                                                System.out.println("I didn't understand your answer, I'm gonna repeat");
-                                                System.out.println(" ");
-                                            }
-                                        }
-                                    } else {
-                                        System.out.println("I didn't understand your answer, can you repeat please?");
-                                    }
-
-
-                                }
-                                break;
-                            } else if (listninjas == 'n' || listninjas == 'N') {
-                                System.out.println("Do you wanna close the software? (Y/N)");
-                                while (!stop5) {
-                                    char close = ninjainput.next().charAt(0);
-                                    if (close == 'y' || close == 'Y') {
-                                        System.out.println("Sistem Closing...");
-                                        stop = true;
-                                        break;
-                                    } else if (close == 'n' || close == 'N') {
-                                        System.out.println("So, do you want to list them?");
-                                        break;
-                                    } else {
-                                        System.out.println("I didn't understand your answer, can you repeat please?");
-                                    }
-                                }
-                            } else {
-                                System.out.println("I didn't understand your answer, can you repeat please?");
-                            }
-                        }
-                        ;
                     }
-                    else {
-                        System.out.println("Invalid Number, try again");
 
-                    }
-                }
-//                --------------------------------------------------------------------------------------------------
-//              OPTION 2: NO
-                else if (createninjas == 'n' || createninjas == 'N') {
-                    System.out.println("Do you wanna close the software? (Y/N)");
-                    while (!stop3){
-                        char close = ninjainput.next().charAt(0);
-                        if (close == 'y' || close == 'Y') {
-                            System.out.println("Sistem Closing...");
-                            stop = true;
-                            break;
+                    // Repetindo o painel para pode selecionar novamente
+                    System.out.println("Qual serviço deseja?");
+                    System.out.println("[01] Cadastrar Ninja");
+                    System.out.println("[02] Ver Ninjas cadastrados");
+                    System.out.println("[03] Encerrar programa");
+
+                    int Painel2 = Input.nextInt();
+                    Opcao = Painel2;
+
+                case 2:  // Caso 2 para mostrar a lista dos ninjas
+                    if (Cadastros < 1) {  // Se caso não ouver cadastros essa mensagem será exibida
+                        System.out.println("Nenhum Ninja Cadastrado");
+
+                    } else { // Se ouver pelo menos um cadastro o loop ira iterar os itens e mostrá los
+                        System.out.println("NINJAS CADASTRADOS");
+                        System.out.println("_______________________________________________");
+                        System.out.println("NOME     |     IDADE");
+                        for (int i = 0; i < quantidade; i++) {
+                            System.out.println(Nomes[i] + "         " +  Idades[i]);
                         }
-                        else if (close == 'n' || close == 'N'){
-                            break;
-                        }
-                        else {
-                            System.out.println("I didn't understand your answer, can you repeat please?");
-                        }
+                        System.out.println("_______________________________________________");
                     }
                     break;
-                }
-//                --------------------------------------------------------------------------------------------------
-//              OPTION 3: ERROR
-                else {
-                    System.out.println("I didn't understand your answer, can you repeat?");
-                }
-                break;
             }
+
         }
+        Input.close();
     }
+
 }
+

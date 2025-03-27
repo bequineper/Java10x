@@ -1,0 +1,1 @@
+package Level_Jounin.Interfaces;import java.util.Scanner;public class main {        public static void main(String[] args) {//            Próxima aula #F0043                Missions mission1 = new Missions("Fuck naruto",MissionRank.S);                mission1.showdetails();        }    }
